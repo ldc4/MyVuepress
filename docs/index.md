@@ -33,9 +33,11 @@ footer: MIT Licensed | Copyright © 2020-present Weedust
 :::
 
 ::: tip 2020年1月1日 - 2020年1月12日 第1期  
-可选主题：webpack、vue源码  
-确认主题：待定  
-完成情况：todo  
+可选主题：webpack、Vue源码  
+确认主题：Vue源码  
+学习来源：https://github.com/NLRX-WJC/Learn-Vue-Source-Code  
+目标：根据作者的思路先过一遍，学到Vue实现原理，并输出自己的想法  
+完成情况：doing  
 :::
 
 
