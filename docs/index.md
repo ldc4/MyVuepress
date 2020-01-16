@@ -1,7 +1,7 @@
 ---
 home: true
 heroText: 零度尘封
-tagline: 不否认过去，不畏惧将来
+tagline: 不否认过去，不辜负现在，不畏惧将来
 footer: MIT Licensed | Copyright © 2020-present Weedust
 ---
 
@@ -29,10 +29,14 @@ footer: MIT Licensed | Copyright © 2020-present Weedust
 ### 打卡
 
 ::: tip 2020年1月1日
-启动
+启动，搭建项目
 :::
 
-::: tip 2020年1月1日 - 2020年1月12日 第1期  
+::: warning 2020年1月1日 - 2020年1月31日
+由于工作忙碌，导致延期，为年后顺利开展做准备工作
+:::
+
+::: tip 2020年2月1日 - 2020年2月16日 第1期  
 可选主题：webpack、Vue源码  
 确认主题：Vue源码  
 学习来源：https://github.com/NLRX-WJC/Learn-Vue-Source-Code  

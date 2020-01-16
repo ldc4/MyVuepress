@@ -31,6 +31,7 @@ function getNav() {
       text: '手册',
       items: [
         { text: 'Javascript', link: '/handbook/javascript/' },
+        { text: 'Linux', link: '/handbook/linux/' },
         { text: 'Vue', link: '/handbook/vue/' },
         { text: 'Webpack', link: '/handbook/webpack/' }
       ]
@@ -48,6 +49,17 @@ function getSidebar() {
     '/handbook/javascript/': [
       {
         title: 'Javascript',
+        collapsable: false,
+        sidebarDepth: 2,
+        children: [
+          ['', '概览'],
+          'basic'
+        ]
+      }
+    ],
+    '/handbook/linux/': [
+      {
+        title: 'Linux',
         collapsable: false,
         sidebarDepth: 2,
         children: [
