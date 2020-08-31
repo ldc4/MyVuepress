@@ -27,6 +27,7 @@ function getNav() {
   return [
     { text: '首页', link: '/' },
     { text: '规划', link: '/plan/' },
+    { text: '周刊', link: '/weekly/' },
     {
       text: '手册',
       items: [
@@ -36,6 +37,8 @@ function getNav() {
         { text: 'Webpack', link: '/handbook/webpack/' }
       ]
     },
+    { text: '博客', link: 'https://ldc4.github.io/blog/' },
+    { text: '生态导航', link: 'https://ldc4.github.io/page/e-nav/'}
   ]
 }
 
