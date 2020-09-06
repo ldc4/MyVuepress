@@ -31,10 +31,22 @@ function getNav() {
     {
       text: '手册',
       items: [
-        { text: 'Javascript', link: '/handbook/javascript/' },
-        { text: 'Linux', link: '/handbook/linux/' },
-        { text: 'Vue', link: '/handbook/vue/' },
-        { text: 'Webpack', link: '/handbook/webpack/' }
+        {
+          text: '基础',
+          items: [
+            { text: 'Javascript', link: '/handbook/javascript/' },
+            { text: 'Vue', link: '/handbook/vue/' },
+          ]
+        },
+        {
+          text: '工具',
+          items: [
+            { text: 'Linux', link: '/handbook/linux/' },
+            { text: 'Webpack', link: '/handbook/webpack/' },
+            { text: 'VS Code', link: '/handbook/vscode/' },
+            { text: 'Mac', link: '/handbook/mac/' }
+          ]
+        },
       ]
     },
     { text: '博客', link: 'https://ldc4.github.io/blog/' },
@@ -56,7 +68,8 @@ function getSidebar() {
         sidebarDepth: 2,
         children: [
           ['', '概览'],
-          'basic'
+          'basic',
+          'performance'
         ]
       }
     ],
@@ -68,6 +81,28 @@ function getSidebar() {
         children: [
           ['', '概览'],
           'basic'
+        ]
+      }
+    ],
+    '/handbook/mac/': [
+      {
+        title: 'Mac',
+        collapsable: false,
+        sidebarDepth: 2,
+        children: [
+          ['', '概览'],
+          'shortcuts'
+        ]
+      }
+    ],
+    '/handbook/vscode/': [
+      {
+        title: 'VS Code',
+        collapsable: false,
+        sidebarDepth: 2,
+        children: [
+          ['', '概览'],
+          'shortcuts'
         ]
       }
     ]
