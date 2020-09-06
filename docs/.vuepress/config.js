@@ -13,6 +13,7 @@ module.exports = {
   ],
   themeConfig: {
     repo: "ldc4/MyVuepress",
+    docsDir: 'docs',
     editLinks: true,
     editLinkText: '帮助Weedust改善此页面！',
     lastUpdated: '最后更新时间',
