@@ -28,7 +28,6 @@ function getNav() {
   return [
     { text: '首页', link: '/' },
     { text: '规划', link: '/plan/' },
-    { text: '周刊', link: '/weekly/' },
     {
       text: '手册',
       items: [
@@ -50,8 +49,6 @@ function getNav() {
         },
       ]
     },
-    { text: '博客', link: 'https://ldc4.github.io/blog/' },
-    { text: '生态导航', link: 'https://ldc4.github.io/page/e-nav/'}
   ]
 }
 
@@ -60,7 +57,8 @@ function getSidebar() {
   return {
     '/plan/': [
       '',
-      '2020'
+      '2020',
+      '2021'
     ],
     '/handbook/javascript/': [
       {
