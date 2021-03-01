@@ -9,3 +9,9 @@ lsof -i :8080
 netstat -lntup | grep 8080
 ```
 
+## 查看磁盘使用情况
+
+```bash
+df -h
+```
+

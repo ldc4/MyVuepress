@@ -32,10 +32,19 @@ function getNav() {
       text: '手册',
       items: [
         {
-          text: '基础',
+          text: '前端基础',
           items: [
             { text: 'Javascript', link: '/handbook/javascript/' },
+            { text: 'CSS', link: '/handbook/css/' },
+            { text: 'HTML', link: '/handbook/html/' },
             { text: 'Vue', link: '/handbook/vue/' },
+          ]
+        },
+        {
+          text: '数据库',
+          items: [
+            { text: 'MySQL', link: '/handbook/mysql/' },
+            { text: 'MongoDB', link: '/handbook/mongodb/' },
           ]
         },
         {
