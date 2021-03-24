@@ -58,6 +58,12 @@ function getNav() {
         },
       ]
     },
+    {
+      text: 'NPM库',
+      items: [
+        { text: 'axios', link: '/npmlib/axios/' },
+      ]
+    }
   ]
 }
 
