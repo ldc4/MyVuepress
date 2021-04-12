@@ -1,5 +1,11 @@
 # Javascript
 
+常用链接：
+
+MDN
+
+Lodash
+
 书籍：
 
 《JavaScript高级程序设计(第3版)》- 目前已经出到第4版了

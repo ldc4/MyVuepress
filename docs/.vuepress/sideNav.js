@@ -16,7 +16,8 @@ const javascript = {
       children: [
         ['', '概览'],
         'basic',
-        'performance'
+        'performance',
+        'book1',
       ]
     }
   ]
