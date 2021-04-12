@@ -230,3 +230,232 @@ Not a Number，表示一个本要返回数值的操作数未返回数值的情�
   - 如果字符串中包含除上述格式之外的字符，将转换为NaN
 - 如果是对象，则调用valueOf()方法，然后按照前面的规则进行转换。如果转换为NaN，则调用toString()方法，然后再按照前的规则进行转换
 
+`parseInt()`的转换规则：
+> [MDN说得很详细](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/parseInt)
+
+在使用 parseInt 时，一定要指定一个 radix。
+
+parseInt不能解析出Infinity
+
+```javascript
+filterInt = function (value) {
+  if(/^(\-|\+)?([0-9]+|Infinity)$/.test(value))
+    return Number(value);
+  return NaN;
+}
+```
+
+`parseFloat()`的转换规则：
+> [MDN说得很详细](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/parseFloat)
+
+与parseInt的区别在于始终会忽略前导0
+
+如果字符串包含的是一个可解析为整数的数（没有小数点，或者小数点后都是0），parseFloat会返回整数。
+
+#### String类型
+
+表示由0或多个16位Unicode字符组成的字符序列，即字符串。
+
+字符串可以由双引号("")或单引号('')表示。
+
+##### 字符字面量
+
+String数据类型包含一些特殊的字符字面量，也叫转义序列，用于表示非打印字符，或者具有其他用途的字符。
+
+|字面量|含义|
+|-|-|
+|\0|空字符|
+|\'|单引号|
+|\"|双引号|
+|\\|反斜杠|
+|\n|换行|
+|\r|回车|
+|\v|垂直制表符|
+|\t|水平制表符|
+|\b|退格|
+|\f|换页|
+|\uXXXX|unicode码|
+|\xXX|Latin-1 字符(x小写)|
+
+length只返回字符数
+
+##### 字符串的特点
+
+字符串是不可变的，一旦创建，值就不能改变。
+
+要改变某个变量保存的字符串，需要先销毁再创建。
+
+##### 转换为字符串
+
+item.toString()
+
+String(item)
+
+item + ""
+
+#### Object类型
+
+对象是一组数组和功能的集合。可以通过执行new操作符后跟要创建的对象类型的名称来创建。
+
+创建Object类型的实例并为其添加属性或方法，就可以创建自定义对象
+
+```javascript
+const o1 = new Object();
+const o2 = new Object;  // 没构造参数的时候，可以省略括号（），但不推荐。
+```
+
+Object的每个实例都具有下列属性和方法：  
+constructor  
+hasOwnProperty(propertyName)  
+isPrototypeOf(object)  
+propertyIsEnumerable(propertyName)  
+toLocalString()  
+toString()  
+valueOf()  
+
+### 操作符
+
+ECMA-262描述了一组用于操作数据值的操作符
+
+#### 一元操作符
+
+++item  
+--item  
+item++  
+item--  
++item  
+-item  
+
+#### 位操作符
+
+二进制  
+符号位  
+二进制补码  
+
+补码 = 反码 + 1
+
+取反：~item  
+按位与：itemA & itemB  
+按位或：itemA | itemB  
+按位异或：itemA ^ itemB  
+左移：item << num  
+有符号右移：item >> num  
+无符号右移：item >>> num  
+> 左移不会影响操作数的符号位
+
+#### 布尔操作符
+
+逻辑非：!item  
+逻辑与：itemA && itemB  
+逻辑或：itemA || itemB  
+
+#### 乘性操作符
+
+乘法：itemA * itemB  
+除法：itemA / itemB  
+求模：itemA % itemB  
+
+#### 加性操作符
+
+加法：itemA + itemB  
+减法：itemA - itemB  
+
+#### 关系操作符
+
+小于：itemA < itemB  
+大于：itemA > itemB  
+小于等于：itemA <= itemB  
+大于等于：itemA >= itemB  
+
+#### 相等操作符
+
+相等：itemA == itemB  
+不相等：itemA != itemB  
+全等：itemA === itemB  
+不全等：itemA !== itemB  
+
+#### 条件操作符
+
+三元操作符  
+booleanExpression ? itemA : itemB
+
+#### 赋值操作符
+
+const a = 1;
+
+*=  
+/=  
+%=  
++=  
+-=  
+<<=  
+\>>=  
+\>>>=  
+
+
+#### 逗号操作符
+
+const num1 = 1, num2 = 2, num3 = 3;
+
+const num = (1, 2, 3)
+
+返回逗号表达式中的最后一项
+
+
+### 语句
+
+这些都是基础中的基础，是常识
+
+#### if语句
+
+#### do-while语句
+
+#### while语句
+
+#### for语句
+
+#### for-in语句
+
+#### label语句
+
+#### break和continue语句
+
+#### with语句
+
+#### switch语句
+
+
+### 函数
+
+```javascript
+function name(a, b) {
+  const something = a + b;
+  // statements
+  console.log(arguments);
+  return something;
+}
+
+const name = (a, b) => {
+  const something = a + b;
+  // statements
+  console.log(arguments);
+  return something;
+}
+```
+
+#### 理解参数
+
+在函数体内可以通过arguments对象来访问这个参数数组，从而获取传递给函数的每一个参数
+
+arguments对象是类数组，不是Array的实例
+
+arguments对象中的值会自动反映到对应的命名参数，他们的内存空间是独立的，但他们的值是同步的
+
+没有传递值的命名参数将自动被赋予undefined值
+
+严格模式下，对arguments赋值无效
+
+#### 没有重载
+
+通过检查传入函数中参数的类型和数量并作出不同的反应，可以模仿方法的重载。
+
