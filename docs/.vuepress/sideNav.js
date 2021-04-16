@@ -17,9 +17,16 @@ const javascript = {
         ['', '概览'],
         'basic',
         'performance',
+      ]
+    },
+    {
+      title: '书籍',
+      collapsable: false,
+      sidebarDepth: 2,
+      children: [
         'book1',
       ]
-    }
+    },
   ]
 }
 
