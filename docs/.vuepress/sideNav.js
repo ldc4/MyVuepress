@@ -127,6 +127,20 @@ const vue = {
   ]
 }
 
+const mongodb = {
+  '/handbook/mongodb/': [
+    {
+      title: 'MongoDB',
+      collapsable: false,
+      sidebarDepth: 2,
+      children: [
+        ['', '概览'],
+        'basic'
+      ]
+    }
+  ]
+}
+
 
 // 获取侧边导航
 module.exports = function getSidebar() {
@@ -139,6 +153,7 @@ module.exports = function getSidebar() {
     ...nodejs,
     ...html,
     ...css,
-    ...vue
+    ...vue,
+    ...mongodb,
   }
 }
