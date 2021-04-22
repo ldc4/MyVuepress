@@ -15,3 +15,16 @@ netstat -lntup | grep 8080
 df -h
 ```
 
+## 查看进程信息
+
+```bash
+ps -ef | grep node
+```
+
+## 查看yum模块列表
+
+```bash
+yum module list
+yum module list nodejs
+```
+

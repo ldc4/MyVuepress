@@ -38,7 +38,8 @@ const linux = {
       sidebarDepth: 2,
       children: [
         ['', '概览'],
-        'basic'
+        'basic',
+        'config',
       ]
     }
   ]
