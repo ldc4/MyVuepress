@@ -141,6 +141,21 @@ const mongodb = {
   ]
 }
 
+const mysql = {
+  '/handbook/mysql/': [
+    {
+      title: 'MySQL',
+      collapsable: false,
+      sidebarDepth: 2,
+      children: [
+        ['', '概览'],
+        'basic'
+      ]
+    }
+  ]
+}
+
+
 
 // 获取侧边导航
 module.exports = function getSidebar() {
@@ -155,5 +170,6 @@ module.exports = function getSidebar() {
     ...css,
     ...vue,
     ...mongodb,
+    ...mysql,
   }
 }
