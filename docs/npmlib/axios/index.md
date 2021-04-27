@@ -91,4 +91,64 @@ koa2中有koa-qs中间件
   1. 接口协议保持最普通的对象，值都用JSON.stringify序列化为字符串
   2. 不要使用get的url来传参，全都用post方法，走bodyParse逻辑来解析为对象
 
+### 取消重复请求
 
+参考：[https://juejin.cn/post/6955610207036801031](https://juejin.cn/post/6955610207036801031)
+
+```javascript
+// 生成请求Key
+function generateReqKey(config) {
+  const { method, url, params, data } = config;
+  return [method, url, Qs.stringify(params), Qs.stringify(data)].join("&");
+}
+// 记录请求对象
+const pendingRequest = new Map();
+function addPendingRequest(config) {
+  const requestKey = generateReqKey(config);
+  config.cancelToken = config.cancelToken || new axios.CancelToken((cancel) => {
+    if (!pendingRequest.has(requestKey)) {
+      pendingRequest.set(requestKey, cancel);
+    }
+  });
+}
+// 检查是否重复请求
+function removePendingRequest(config) {
+  const requestKey = generateReqKey(config);
+  if (pendingRequest.has(requestKey)) {
+    const cancelToken = pendingRequest.get(requestKey);
+    cancelToken(requestKey);
+    pendingRequest.delete(requestKey);
+  }
+}
+// 拦截请求
+axios.interceptors.request.use(
+  function (config) {
+    // 检查是否存在重复请求，若存在则取消已发的请求
+    removePendingRequest(config);
+    // 把当前请求信息添加到pendingRequest对象中
+    addPendingRequest(config);
+    return config;
+  },
+  (error) => {
+     return Promise.reject(error);
+  }
+);
+// 拦截响应
+axios.interceptors.response.use(
+  (response) => {
+    // 从pendingRequest对象中移除请求
+    removePendingRequest(response.config);
+    return response;
+  },
+  (error) => {
+    // 从pendingRequest对象中移除请求
+    removePendingRequest(error.config || {});
+    if (axios.isCancel(error)) {
+      console.log("已取消的重复请求：" + error.message);
+    } else {
+      // 添加异常处理
+    }
+    return Promise.reject(error);
+  }
+);
+```
