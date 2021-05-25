@@ -1,0 +1,13 @@
+{
+  "/handbook/mysql/": [
+    {
+      "title": "MySQL",
+      "collapsable": false,
+      "sidebarDepth": 2,
+      "children": [
+        ["", "概览"],
+        "basic"
+      ]
+    }
+  ]
+}

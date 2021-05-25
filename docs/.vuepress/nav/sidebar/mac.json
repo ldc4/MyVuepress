@@ -1,0 +1,13 @@
+{
+  "/handbook/mac/": [
+    {
+      "title": "Mac",
+      "collapsable": false,
+      "sidebarDepth": 2,
+      "children": [
+        ["", "概览"],
+        "shortcuts"
+      ]
+    }
+  ]
+}

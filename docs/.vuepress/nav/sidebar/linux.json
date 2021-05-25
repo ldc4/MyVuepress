@@ -1,0 +1,14 @@
+{
+  "/handbook/linux/": [
+    {
+      "title": "Linux",
+      "collapsable": false,
+      "sidebarDepth": 2,
+      "children": [
+        ["", "概览"],
+        "basic",
+        "config"
+      ]
+    }
+  ]
+}

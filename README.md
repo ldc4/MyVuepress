@@ -33,4 +33,8 @@ yarn build # 或者：npm run build
 1. 写好内容后，运行npm run build
 2. 构建页面后，运行npm run deploy
 
+### 文档命名建议
+
+按照导航的层级结构组织目录
+太长的名称可以使用中划线来隔开，不要用缩写
 

@@ -1,0 +1,12 @@
+{
+  "/handbook/vue/": [
+    {
+      "title": "Vue",
+      "collapsable": false,
+      "sidebarDepth": 2,
+      "children": [
+        ["", "概览"]
+      ]
+    }
+  ]
+}

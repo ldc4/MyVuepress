@@ -1,0 +1,56 @@
+[
+  {
+    "text": "首页",
+    "link": "/"
+  },
+  {
+    "text": "手册",
+    "items": [
+      {
+        "text": "前端基础",
+        "items": [
+          { "text": "Javascript", "link": "/handbook/javascript/" },
+          { "text": "CSS", "link": "/handbook/css/" },
+          { "text": "HTML", "link": "/handbook/html/" },
+          { "text": "Vue", "link": "/handbook/vue/" }
+        ]
+      },
+      {
+        "text": "后端基础",
+        "items": [
+          { "text": "NodeJS", "link": "/handbook/nodejs/" },
+          { "text": "Koa", "link": "/handbook/koa/" },
+          { "text": "Express", "link": "/handbook/express/" }
+        ]
+      },
+      {
+        "text": "数据库",
+        "items": [
+          { "text": "MySQL", "link": "/handbook/mysql/" },
+          { "text": "MongoDB", "link": "/handbook/mongodb/" }
+        ]
+      },
+      {
+        "text": "工具",
+        "items": [
+          { "text": "Linux", "link": "/handbook/linux/" },
+          { "text": "Webpack", "link": "/handbook/webpack/" },
+          { "text": "VS Code",  "link": "/handbook/vscode/" },
+          { "text": "Mac", "link": "/handbook/mac/" }
+        ]
+      }
+    ]
+  },
+  {
+    "text": "NPM库",
+    "items": [
+      { "text": "axios", "link": "/npmlib/axios/" }
+    ]
+  },
+  {
+    "text": "更多",
+    "items": [
+      { "text": "规划", "link": "/plan/" }
+    ]
+  }
+]

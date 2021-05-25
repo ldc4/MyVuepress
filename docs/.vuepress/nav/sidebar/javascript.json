@@ -1,0 +1,30 @@
+{
+  "/handbook/javascript/": [
+    {
+      "title": "Javascript",
+      "collapsable": false,
+      "sidebarDepth": 2,
+      "children": [
+        ["", "概览"],
+        "basic",
+        "performance"
+      ]
+    },
+    {
+      "title": "书籍",
+      "collapsable": false,
+      "sidebarDepth": 2,
+      "children": [
+        "book/professional-javascript-for-web-developers"
+      ]
+    },
+    {
+      "title": "冷门知识",
+      "collapsable": false,
+      "sidebarDepth": 2,
+      "children": [
+        "byway/service-worker"
+      ]
+    }
+  ]
+}

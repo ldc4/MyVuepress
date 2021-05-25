@@ -1,5 +1,4 @@
-const getNav = require('./topNav');
-const getSidebar = require('./sideNav');
+const { nav, sidebar } = require('./nav');
 
 module.exports = {
   title: 'LDC4',
@@ -21,7 +20,7 @@ module.exports = {
     editLinkText: '帮助Weedust改善此页面！',
     lastUpdated: '最后更新时间',
     smoothScroll: true,
-    nav: getNav(),
-    sidebar: getSidebar()
+    nav,
+    sidebar
   },
 }

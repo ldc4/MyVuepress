@@ -1,0 +1,13 @@
+{
+  "/handbook/vscode/": [
+    {
+      "title": "VS Code",
+      "collapsable": false,
+      "sidebarDepth": 2,
+      "children": [
+        ["", "概览"],
+        "shortcuts"
+      ]
+    }
+  ]
+}
