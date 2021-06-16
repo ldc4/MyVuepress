@@ -541,3 +541,223 @@ console.log(color);
 
 解除引用：一旦数据不再有用，最好通过将其值设置为null来释放其引用
 
+
+
+
+## 引用类型
+
+在JS中，引用类型与类并不是同一个概念，虽然看起来相似
+
+### Object类型
+
+创建Object实例的两种方式：
+
+1. const person = new Object()
+2. const person = {}
+
+访问对象属性：
+
+1. person['name'];
+2. person.name;
+
+
+### Array类型
+
+创建数组的两种方式：
+
+1. 通过Array构造函数创建
+```javascript
+const colors = new Array();
+const colors = new Array(20);
+const colors = new Array('red', 'blue', 'green');
+
+```
+2. 通过数组字面量
+```javascript
+const colors = ['red', 'blue', 'green'];
+
+```
+
+访问数组的值：colors[0]
+
+数组最多可以包含 4,294,967,295 个项（2^32 - 1）
+
+#### 检测数组
+
+```javascript
+if (value instanceof Array) {
+  // ...
+}
+```
+instanceof 操作符的问题在于，它假定只有一个全局执行环境。
+
+```javascript
+if (!Array.isArray) { // Polyfill
+  Array.isArray = function(arg) {
+    return Object.prototype.toString.call(arg) === '[object Array]';
+  };
+}
+if (Array.isArray(value)) { // 支持IE9+
+  //...
+}
+```
+
+#### 转换方法
+
+toString()
+toLocaleString()
+valueOf()
+
+#### 栈方法
+
+push()
+pop()
+
+#### 队列方法
+
+shift()
+unshift()
+
+#### 重排序方法
+
+reverse()
+sort() - 默认按升序排列
+
+```javascript
+function compare(value1, value2){
+  return value2 - value1;
+}
+```
+
+#### 操作方法
+
+concat()
+slice()
+splice()
+
+#### 位置方法
+
+indexOf()
+lastIndexOf()
+
+#### 迭代方法
+
+every()
+filter()
+forEach()
+map()
+some()
+
+#### 归并方法
+
+reduce()
+reduceRight()
+
+```javascript
+const result = [1, 2, 3, 4, 5].reduce((prev, cur, index, arr) => {
+  return prev + cur;
+}, 0);
+console.log(result); // 15
+```
+
+### Date类型
+
+Date类型使用自UTC 1970年1月1日午夜(零时)开始经过的毫秒数来保存日期。
+
+当前日期：`new Date()`
+
+new Date() - 构造函数的参数为毫秒数
+
+Date.parse() - 解析日期字符串，并返回毫秒数
+
+Date.UTC() - 参数：年份、基于 0 的月份、月中的哪一天 (1 到 31)、小时数(0 到 23)、分钟、秒以及毫秒数
+
+Date.now() - 等价于 +new Date()
+
+显示调用：  
+Date.parse(dateStr)  
+Date.UTC(year,month\[,date\[,hrs\[,min\[,sec\[,ms\]\]\]\]\])
+
+隐式调用：  
+new Date(dateStr).getTime()  
+new Date(year,month\[,date\[,hrs\[,min\[,sec\[,ms\]\]\]\]\]).getTime()
+
+#### 继承的方法
+
+toLocaleString()
+toString()
+valueOf()
+
+返回的值与其他类型中的方法不同
+
+#### 日期格式化方法
+
+toDateString()
+toTimeString()
+toLocalDateString()
+toLocalTimeString()
+toUTCString()
+toLocaleString()
+
+#### 日期/时间组件方法
+
+getTimezoneOffset() - 返回本地时间与UTC时间相差的分钟数
+getTime()
+getFullYear()
+getMonth()
+getDate()
+getDay()
+getHours()
+getMinutes()
+getSeconds()
+getMilliseconds()
+set...
+getUTC...
+setUTC...
+...
+
+
+### RegExp类型
+
+const expression1 = / pattern / flags;
+const expression2 = new RegExp('pattern', flags);
+
+模式：包含字符类、限定符、分组、向前查找以及反向引用
+
+标志：标明正则表达式的行为
+ - g 表示全局模式
+ - i 表示不区分大小写
+ - m 表示多行模式
+
+模式中使用的所有元字符必须转义。
+
+元字符：\(\[\{ \ ^ $ | ? * + . \}\]\)
+
+通过RegExp构造函数传参的字符串，对于\需要双重转义。
+
+ES5中明确规定，使用正在表达式字面量必须像直接调用RegExp构造函数一样，每次都创建新的RegExp实例。
+
+#### RegExp实例属性
+
+global
+
+ignoreCase
+
+lastIndex
+
+multiline
+
+source 正则表达式的字符串表示，按照字面量形式的字符串模式返回
+
+#### RegExp实例方法
+
+exec(str) - 返回包含第一个匹配项信息的数组，在没有匹配项的情况下返回null
+
+> 返回的数组额外包含两个属性：index和input  
+> 在数组中，第一项是与整个模式匹配的字符串，其他项是与模式中捕获组匹配的字符串  
+> 在全局模式下，重复调用会接着匹配，否则只返回第一项  
+
+test(str) - 在模式与字符串匹配的情况下返回true
+
+toLocaleString()/toString() - 都会返回正则表达式的字面量
+
