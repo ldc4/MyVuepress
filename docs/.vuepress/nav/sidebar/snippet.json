@@ -1,0 +1,12 @@
+{
+  "/snippet/": [
+    {
+      "title": "Element UI",
+      "collapsable": false,
+      "sidebarDepth": 2,
+      "children": [
+        ["element-ui/dialog", "对话框（Dialog）"]
+      ]
+    }
+  ]
+}

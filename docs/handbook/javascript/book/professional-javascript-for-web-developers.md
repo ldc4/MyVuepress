@@ -761,3 +761,58 @@ test(str) - 在模式与字符串匹配的情况下返回true
 
 toLocaleString()/toString() - 都会返回正则表达式的字面量
 
+#### RegExp构造函数属性
+
+|长属性名|短属性名|说明|
+|---|---|---|
+| input | $_ | 最近一次要匹配的字符串。Opera未实现此属性 |
+| lastMatch | $& | 最近一次的匹配项。Opera未实现此属性 |
+| lastParen | $+ | 最近一次匹配的捕获组。Opera未实现此属性 |
+| leftContext | $` | input字符串中lastMatch之前的文本 |
+| multiline | $* | 布尔值，表示是否所有表达式都使用多行模式。IE和Opera未实现此属性 |
+| rightContext | $' | Input字符串中lastMatch之后的文本 |
+
+通过$1、$2...$9来访问匹配的捕获组
+
+
+### Function类型
+
+```javascript
+function sum(num1, num2) {
+  return num1 + num2;
+}
+```
+
+```javascript
+const sum = function(num1, num2) {
+  return num1 + num2;
+};
+```
+
+```javascript
+const sum = new Function('num1', 'num2', 'return num1 + num2'); // 不推荐
+```
+
+函数名为函数的指针
+
+没有重载
+
+函数声明和函数表达式区别就在于函数声明会提升，可以在声明之前调用
+
+因为函数名本身就是变量，所以函数也可以作为值来使用。
+
+函数内部属性：arguments 和 this
+
+arguments.callee指向拥有这个arguments对象的函数
+
+this引用的是函数执行的环境对象
+
+caller属性保存着调用当前函数的函数的引用，如果实在全局作用域下调用当前函数，它的值为null
+
+length属性表示函数希望接收的命名参数的个数
+
+apply()和call()，在特定的作用域中调用函数，可以设置函数体内this对象的值
+
+bind()，其this值会被绑定到传给bind()函数的值。
+
+
