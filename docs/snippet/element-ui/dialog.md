@@ -1,7 +1,14 @@
 # 对话框（Dialog）
 
+## 常用属性
 
-## 基础用法
+|属性|说明|
+|---|---|
+|:modal-append-to-body="false"| 当el-dialog外层有position:fixed，模态框z-index会失效，导致被蒙层覆盖 |
+|:close-on-press-escape="false"| 禁止按ESC关闭模态框 |
+|:close-on-click-modal="false"| 禁止点击蒙层关闭模态框 |
+
+## 模板
 
 ```javascript
 <template>
@@ -31,7 +38,7 @@ export default {
     },
     dialogData: {
       type: Object,
-      default: {},
+      default: () => {},
     }
   },
   data() {
@@ -67,3 +74,5 @@ export default {
 }
 </script>
 ```
+
+
