@@ -40,7 +40,8 @@
           { "text": "Linux", "link": "/handbook/linux/" },
           { "text": "Webpack", "link": "/handbook/webpack/" },
           { "text": "VS Code",  "link": "/handbook/vscode/" },
-          { "text": "Mac", "link": "/handbook/mac/" }
+          { "text": "Mac", "link": "/handbook/mac/" },
+          { "text": "Git", "link": "/handbook/git/" }
         ]
       }
     ]
